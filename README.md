@@ -1,8 +1,7 @@
 # Equity_Strats
 
 SPX/SPY Strats
-
-![image](https://github.com/jimmmmmmmmmmmy/Equity_Strats/assets/143036559/dde647b2-fef6-445b-b028-085428d8164b)
+![image](https://github.com/jimmmmmmmmmmmy/Equity_Strats/assets/143036559/b9fd8de5-8abb-4f6f-9549-5459af16f168)
 
 
 # Equity_Strats
