@@ -1,8 +1,8 @@
 # Equity_Strats
 
-SPX/SPY Strats
-![image](https://github.com/jimmmmmmmmmmmy/Equity_Strats/assets/143036559/b9fd8de5-8abb-4f6f-9549-5459af16f168)
+SPX/SPY Strats\
 
+<img width="600" alt="Screenshot 2023-09-11 at 6 54 29 PM" src="https://github.com/jimmmmmmmmmmmy/Equity_Strats/assets/143036559/bcd90d67-0786-4222-9707-ca4f2436e9ce">
 
 # Equity_Strats
 
