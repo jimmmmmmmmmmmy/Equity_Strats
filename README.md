@@ -1,4 +1,5 @@
-# Equity_Strats
+# Equity_Strats and stats
+<img width="833" alt="Screenshot 2023-09-11 at 10 54 50 PM" src="https://github.com/jimmmmmmmmmmmy/Equity_Strats/assets/143036559/cb6c64df-32b5-4b74-bb75-6cac435be97d">
 
 SPX/SPY Strats\
 
