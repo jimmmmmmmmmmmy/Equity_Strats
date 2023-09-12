@@ -2,7 +2,7 @@
 
 SPX/SPY Strats\
 
-<img width="600" alt="Screenshot 2023-09-11 at 6 54 29 PM" src="https://github.com/jimmmmmmmmmmmy/Equity_Strats/assets/143036559/bcd90d67-0786-4222-9707-ca4f2436e9ce">
+<img width="465" alt="Screenshot 2023-09-11 at 8 12 39 PM" src="https://github.com/jimmmmmmmmmmmy/Equity_Strats/assets/143036559/0f85389c-9e05-45ef-9303-a857c895be5b">
 
 # Equity_Strats
 
