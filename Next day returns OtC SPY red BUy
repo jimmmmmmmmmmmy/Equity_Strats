@@ -1,0 +1,59 @@
+import pandas as pd
+import yfinance as yf
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.ticker as mtick
+
+# Download data
+data_spy = yf.download('SPY')
+
+# Calculate price change for SPY
+data_spy['PriceChangeIntraday'] = data_spy['Close'] - data_spy['Open']
+data_spy['PriceChangeInterday'] = data_spy['Close'].diff()
+
+# Calculate percentage change for red days
+red_days_intraday = data_spy[data_spy['PriceChangeIntraday'] < 0].copy()
+red_days_interday = data_spy[data_spy['PriceChangeInterday'] < 0].copy()
+
+red_days_intraday_percentage = red_days_intraday['PriceChangeIntraday'] / red_days_intraday['Open'] * 100
+red_days_interday_percentage = red_days_interday['PriceChangeInterday'] / red_days_interday['Close'].shift() * 100
+
+# Create custom bins
+bins = np.linspace(-2, -0, 50).tolist()
+labels = [f"{bins[i]:.2f} to {bins[i+1]:.2f}" for i in range(len(bins)-1)]
+
+# Bin data
+red_days_intraday['PercentageChangeBinned'] = pd.cut(red_days_intraday_percentage, bins=bins, labels=labels, include_lowest=True)
+red_days_interday['PercentageChangeBinned'] = pd.cut(red_days_interday_percentage, bins=bins, labels=labels, include_lowest=True)
+
+# Calculate next day returns
+data_spy['NextDayReturn'] = (data_spy['Close'].shift(-1) - data_spy['Close']) / data_spy['Close']
+
+# Filter next day returns for red days
+red_days_intraday['NextDayReturn'] = data_spy['NextDayReturn']
+red_days_interday['NextDayReturn'] = data_spy['NextDayReturn']
+
+# Calculate average return for each bin
+average_returns_intraday = red_days_intraday.groupby('PercentageChangeBinned')['NextDayReturn'].mean()
+average_returns_interday = red_days_interday.groupby('PercentageChangeBinned')['NextDayReturn'].mean()
+
+# Create subplots
+fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True)
+
+# Plot average returns for intraday strategy
+average_returns_intraday.plot(kind='bar', color='red', alpha=0.7, ax=ax1)
+ax1.set_ylabel('Average Next Day Return')
+ax1.set_title('RTH Strategy')
+ax1.yaxis.set_major_formatter(mtick.PercentFormatter(1.0))
+
+# Plot average returns for interday strategy
+average_returns_interday.plot(kind='bar', color='blue', alpha=0.7, ax=ax2)
+ax2.set_ylabel('Average Next Day Return')
+ax2.set_xlabel('Decline (%)')
+ax2.set_title('ETH Strategy')
+ax2.yaxis.set_major_formatter(mtick.PercentFormatter(1.0))
+
+plt.suptitle('SPY Average Next Day Return per % Decline')
+plt.grid(False)
+plt.tight_layout(rect=[0, 0, 1, 0.96])  # Adjust layout to make room for the main title
+plt.show()
