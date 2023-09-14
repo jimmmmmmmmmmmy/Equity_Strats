@@ -1,8 +1,4 @@
 # Equity_Strats and stats
-<img width="465" src="https://github.com/jimmmmmmmmmmmy/Equity_Strats/assets/143036559/cb6c64df-32b5-4b74-bb75-6cac435be97d">
-
-<img width="465" src="https://github.com/jimmmmmmmmmmmy/Equity_Strats/assets/143036559/fb8160c1-cd64-4670-9287-9129f614238d">
-
 
 SPX/SPY Strats\
 
@@ -19,3 +15,6 @@ The `buy SPY strategy.py` script implements a proprietary trading strategy. The 
 The script also includes a visualization component, which plots the performance of the strategy over time. This allows users to easily assess the effectiveness of the strategy.
 
 Please note that this strategy does not take into account transaction costs or taxes, and past performance is not indicative of future results.
+
+Stats:
+<img width="839" alt="Screenshot 2023-09-13 at 9 46 24 PM" src="https://github.com/jimmmmmmmmmmmy/Equity_Strats/assets/143036559/53afdc47-ab4e-4488-99e7-4a3e25ae002e">
